@@ -7,7 +7,7 @@ import  matplotlib.font_manager as fm
 font_path = "/root/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf/SIMKAI.TTF"
 myfont = fm.FontProperties(fname=font_path)
 #check for load csv file
-creditcard_path = "/root/PycharmProjects/creditcard/creditcard.csv"
+creditcard_path = "/root/PycharmProject/datasoure/creditcard.csv"
 
 try:
     data = pd.read_csv(creditcard_path)
