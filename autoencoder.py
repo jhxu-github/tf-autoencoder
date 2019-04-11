@@ -3,10 +3,11 @@ import  tensorflow as tf
 import  pandas as pd
 
 class Autoencoder():
+    #This autoencoder model base on tensorflow-gpu-1.12
     def __init__(self,n_hidden_1,n_hidden_2,n_input,learning_rate):
         #init   var
         self.n_hidden_1 = n_hidden_1
-        self.n_hidden_2, = n_hidden_2
+        self.n_hidden_2 = n_hidden_2
         self.n_input = n_input
         self.learning_rate = learning_rate
         self.weights ,self.biases = self._initialize_weights()
@@ -57,6 +58,6 @@ class Autoencoder():
         cost, opt = self.sess.run((self.cost,self.optimizer),feed_dict={self.x: X})
         return cost
     def transform(self,X):
-        return self.sess.run(self.encoder_op,feed_dict={self.x: x})
+        return self.sess.run(self.encoder_op,feed_dict={self.x: X})
     def reconstruct(self,X):
-        return self.sess.run(slef.decoder_op,feed_dict={self.x: X})
+        return self.sess.run(self.decoder_op,feed_dict={self.x: X})
